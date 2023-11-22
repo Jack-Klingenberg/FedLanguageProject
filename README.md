@@ -1,0 +1,1 @@
+Run setup.sh to install all dependencies for the project. 

@@ -2,11 +2,11 @@
 # Date: Nov 22, 2023
 # Description: Python script to gather all links to FOMC minute html files without direct web scraping. Uses Requests library to test if link is link is valid
 # and if it is adds it to argv[3] file. Checks for minutes between Jan 1, argv[1] and Dec 31, year argv[2]
-
 import bs4
 import requests
 import sys 
 from tqdm import tqdm
+
 START = int(sys.argv[1])
 END  = int(sys.argv[2])
 TARGET = sys.argv[3]
