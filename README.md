@@ -7,6 +7,7 @@ Term project for CSCI2349. Analysis and language modeling for Federal Reserve Mi
   - [Table of Contents](#table-of-contents)
   - [Setup](#setup)
   - [Guide](#guide)
+  - [To-Do](#todo)
 
 
 ## Setup
@@ -21,5 +22,10 @@ requirements.txt - contains packages and versions needed for the project. If you
 
 gatherlinks.py - python script that gets all documents in a specified date range and pushes them to a text file. Usage: python3 gatherlinks.py <start> <end> <filepath>
 
-
-
+## To-Do
+- [ ] Generate links 
+- [ ] Write web scraper code for each webpage (!)
+- [ ] Compile all scraped text into dataset that can be loaded without repeating web scraping process
+- [ ] Analyze data
+- [ ] Create slides
+- [ ] Presentation
