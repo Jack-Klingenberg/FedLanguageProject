@@ -20,7 +20,7 @@ setup.sh - short shell script to create venv and install packages
 
 requirements.txt - contains packages and versions needed for the project. If you install new packages, you need to add them to this document using "python3 -m pip freeze > requirements.txt". Note that the virtual environment must be active when you do this or else it will push all packages you have installed into requirementst.txt which is an issue. 
 
-gatherlinks.py - python script that gets all documents in a specified date range and pushes them to a text file. Usage: python3 gatherlinks.py <start> <end> <filepath>
+gatherlinks.py - python script that gets all documents in a specified date range and pushes them to a text file. Usage: python3 gatherlinks.py [start] [end] [filepath]
 
 ## To-Do
 - [ ] Generate links 
