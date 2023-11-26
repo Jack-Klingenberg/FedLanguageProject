@@ -2,8 +2,6 @@
 
 Term project for CSCI2349. Analysis and language modeling for Federal Reserve Minutes.
 
-#push test
-
 ## Table of Contents
 
 - [Project Name](#project-name)
