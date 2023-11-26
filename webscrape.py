@@ -22,7 +22,6 @@ for info in soup.find_all("p"):
 
 #replace each newline character with a space
 #replace 1+ consecutive whitespace characters (spaces, tabs, newlines) with a single space
-
 text_string = re.sub("\n", " ", text_string)
 text_string = re.sub("\s+", " ", text_string)
 
