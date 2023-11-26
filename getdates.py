@@ -2,16 +2,29 @@
 
 import re
 
-#retrieve all of the urls
-links_txt_path = 'data/links.txt'
-with open(links_txt_path, 'r') as links_txt:
-     links = links_txt.readlines()
+def get_links_and_dates():
+    #retrieve all of the urls
+    links_txt_path = 'data/links.txt'
+    with open(links_txt_path, 'r') as links_txt:
+        links = links_txt.readlines()
 
-dates = []
-for link in links:
-    file_date = re.sub('https://www.federalreserve.gov/monetarypolicy/fomcminutes', '', link)
-    file_date = re.sub('.htm\n', '', file_date)
-    dates.append(file_date)
+    dates = []
+    for link in links:
+        file_date = re.sub('https://www.federalreserve.gov/monetarypolicy/fomcminutes', '', link)
+        file_date = re.sub('.htm\n', '', file_date)
+        dates.append(file_date)
+    
+    return links, dates
+
+def get_year_end_dates(dates):
+    year_end_dates = []
+    for date in dates:
+        # Check if the month is December (characters at positions 4 and 5)
+        if date[4:6] == '12':
+            year_end_dates.append(date)
+
+    return year_end_dates
+
 
 
 #didn't initially realize that the numbers at the end of each url were the corresponding date 🤖
