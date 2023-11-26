@@ -17,4 +17,4 @@ year_end_meeting_text_list = text_webscrape(year_end_links)
 
 #can now perform analysis on this list
 #analyze each year and see what kinds of words stay common and what words come and go in frequency (maybe the word "recession" is more frequent in some years)
-#can find collocations each year to see if those change
+#can find collocations each year to see if those change 
