@@ -25,7 +25,7 @@ for links_per_year in cleaned_links_by_year:
     yearly_text = text_webscrape(links_per_year)
     dataset_by_year.append(yearly_text)
 
-#for each string in 'dataset_by_year', we can strip everything up to "By unanimous vote" to get rid of the names, then join the sublists into one string to get all the text for one whole year 
+#for each string in 'dataset_by_year', we can strip everything up to "By unanimous vote" to get rid of the names, then join the sublists into one string to get all the text for one whole year  
 
 ''' 
 #only for testing purposes
