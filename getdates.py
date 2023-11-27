@@ -25,6 +25,27 @@ def get_year_end_dates(dates):
 
     return year_end_dates
 
+def group_links_by_year(links):
+    grouped_links = []
+    current_year = None
+    current_group = []
+
+    for link in links:
+        match = re.search(r'https://www.federalreserve.gov/monetarypolicy/fomcminutes(\d{4})', link)
+        if match:
+            year = match.group(1)
+            if year != current_year:
+                if current_group:
+                    grouped_links.append(current_group)
+                current_group = [link]
+                current_year = year
+            else:
+                current_group.append(link)
+
+    if current_group:
+        grouped_links.append(current_group)
+
+    return grouped_links
 
 
 #didn't initially realize that the numbers at the end of each url were the corresponding date 🤖
