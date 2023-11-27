@@ -26,8 +26,8 @@ gatherlinks.py - python script that gets all documents in a specified date range
 
 - [x] Generate links
 - [x] Save links to html files
-- [ ] Write web scraper code for each webpage (!)
-- [ ] Compile all scraped text into dataset that can be loaded without repeating web scraping process
+- [x] Write web scraper code for each webpage (!)
+- [x] Compile all scraped text into dataset that can be loaded without repeating web scraping process
 - [ ] Analyze data
 - [ ] Create slides
 - [ ] Presentation
