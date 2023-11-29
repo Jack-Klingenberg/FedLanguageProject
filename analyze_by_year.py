@@ -10,6 +10,13 @@ import requests
 from nltk.stem import WordNetLemmatizer
 from nltk.collocations import *
 
+'''
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
+from pathlib import Path
+import pandas as pd
+'''
+
 #text_list is a list of all the text, with one element per file
 def read_in_data():
     with open('textbyyear.txt', 'r') as file:
