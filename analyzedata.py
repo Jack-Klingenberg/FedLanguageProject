@@ -3,9 +3,8 @@ import csv
 
 def read_in_data():
     lines = []
-    with open('data/ds1.csv', 'r') as csv_file, open('text.txt', 'w') as out_file:
+    with open('data/ds1.csv', 'r') as csv_file:
         for line in csv_file:
-            out_file.write(line.strip())
             lines.append(line.strip())
     return lines
 
