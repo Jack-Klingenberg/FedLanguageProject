@@ -1,5 +1,5 @@
 from getdates import *
-from webscrape import *
+from compiledata import *
 
 #call functions to get links, dates, and year-end dates
 links, dates = get_links_and_dates()
@@ -15,6 +15,7 @@ for year_end_date in year_end_dates:
 #list that stores all text for each year-end meeting, as a string, 1 element per year
 year_end_meeting_text_list = text_webscrape(year_end_links)
 
+
 #list of lists, each element is a list that stores all the links for each year
 links_by_year = group_links_by_year(links)
 
@@ -24,6 +25,7 @@ dataset_by_year = []
 for links_per_year in cleaned_links_by_year:
     yearly_text = text_webscrape(links_per_year)
     dataset_by_year.append(yearly_text)
+   
 
 #for each string in 'dataset_by_year', we can strip everything up to "By unanimous vote" to get rid of the names, then join the sublists into one string to get all the text for one whole year  
 
