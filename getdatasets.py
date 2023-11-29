@@ -27,14 +27,12 @@ for links_per_year in cleaned_links_by_year:
 
 #for each string in 'dataset_by_year', we can strip everything up to "By unanimous vote" to get rid of the names, then join the sublists into one string to get all the text for one whole year  
 
-''' 
 #only for testing purposes
 with open('text.txt', 'w') as file:
     # Iterate through the lists and write them to the file
     for sublist in dataset_by_year:
         line = ','.join(sublist)  # Assuming you want to separate items by commas
         file.write(line + 'NEXTLINE\n\n\n\n')
-'''
 
 #DATASET1: 'year_end_meeting_text_list': List of text for each year-end meeting, each element contains a string of text for the year-end meeting.
 
