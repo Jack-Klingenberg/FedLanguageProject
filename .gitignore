@@ -2,3 +2,4 @@
 venv/*
 .DS_Store
 data/html
+data/GoogleNews-vectors-negative300-SLIM.bin.gz
