@@ -9,6 +9,8 @@ import glob
 import requests
 from nltk.stem import WordNetLemmatizer
 from nltk.collocations import *
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 '''
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -32,7 +34,7 @@ for text in text_list:
 
 #stop words
 stoplist = stopwords.words("english")
-stoplist.extend([".", ",", "?", "could", "would", "“", "”", "’", ";", "!", 's', 'meeting', 'markets', 'financial', 'participants', 'prices', 'economic', 'conditions', 'committee', 'core', 'outlook', 'housing', "'s", 'spending', 'committee', 'remained', 'rate', 'likely', 'also', 'expected', 'consumer', 'quarter', 'data', 'market', 'generally', 'higher', 'period', 'price', 'generally', 'committee', 'june', "''", 'continued', 'progress', 'economy', 'bank', 'reserve', 'june', 'committee\\', 'reserve', ')', 'board', 'division', 'federal', '``', '2', 'goals', 'monetary', 'supply', 'policy', 'u.s.', '(', 'noted', '2022', 'balance', 'percent', 'range', 'treasury', 'activity', 'stance', 'intermeeting', 'recent', 'year', 'time', 'businesses', 'governors', 'appropriate', 'operations', 'support', 'agreed', 'members', '2020', 'director', 'term', 'staff', 'months', '&', 'united', 'states', 'new', 'york', 'achilles', 'sangster', 'annette', 'samuel', 'min', 'michele', 'sylvain', '2-', '5-', 'seth', 'boards', 'met', 'wright', 'met', 'national', 'glenn', 'weekend', 'andrea', 'laura', 'naureen', '737', 'andrew', 'marc', 'ron', 'sally', '1-1/2', '10-', 'ivan'])
+stoplist.extend([".", ",", "?", "could", "would", "“", "”", "’", ";", "!", 's', 'meeting', 'markets', 'financial', 'participants', 'prices', 'economic', 'conditions', 'committee', 'core', 'outlook', 'housing', "'s", 'spending', 'committee', 'remained', 'rate', 'likely', 'also', 'expected', 'consumer', 'quarter', 'data', 'market', 'generally', 'higher', 'period', 'price', 'generally', 'committee', 'june', "''", 'continued', 'progress', 'economy', 'bank', 'reserve', 'june', 'committee\\', 'reserve', ')', 'board', 'division', 'federal', '``', '2', 'goals', 'monetary', 'supply', 'policy', 'u.s.', '(', 'noted', '2022', 'balance', 'percent', 'range', 'treasury', 'activity', 'stance', 'intermeeting', 'recent', 'year', 'time', 'businesses', 'governors', 'appropriate', 'operations', 'support', 'agreed', 'members', '2020', 'director', 'term', 'staff', 'months', '&', 'united', 'states', 'new', 'york', 'achilles', 'sangster', 'annette', 'samuel', 'min', 'michele', 'sylvain', '2-', '5-', 'seth', 'boards', 'met', 'wright', 'met', 'national', 'glenn', 'weekend', 'andrea', 'laura', 'naureen', '737', 'andrew', 'marc', 'ron', 'sally', '1-1/2', '10-', 'ivan', 'april', 'may', 'june', 'july', 'january', 'february', 'march', 'august', 'september', 'october', 'november', 'december', 'purchase', 'year', 'level', 'net', 'firm', 'still', 'judged', 'many', 'observed', 'sector', 'well'])
 
 #most common tokens
 '''
@@ -72,3 +74,42 @@ finder2020.apply_freq_filter(3)
 for w in finder2020.nbest(bigram_measures.pmi, 10):
     print(" ".join(w))
 '''
+
+
+for year in tokenized_list:
+    tokens = len(year)
+    types = len(set(year))
+    print(types/tokens)
+
+print(len(tokenized_list))
+
+
+'''
+file_path = 'textbyyear.txt'  # Replace 'your_file.txt' with the actual file path
+with open(file_path, 'r') as file:
+    # Read each line in the file
+    for line_number, line in enumerate(file, start=1):
+        # Split the line into words using whitespace as a delimiter
+        words = line.split()
+        
+        # Print the number of words in the current line
+        print(f"Line {line_number}: {len(words)} words")
+'''
+
+'''
+lemmatizer = WordNetLemmatizer()
+
+tokens_2020_nostops = [w for w in tokenized_list[15] if w.lower() not in stoplist]
+all_lemmas2020 = [lemmatizer.lemmatize(w) for w in tokens_2020_nostops]
+text2020 = " ".join(all_lemmas2020)
+
+wordcloud = WordCloud().generate(text2020)
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+wordcloud = WordCloud(max_font_size=40).generate(text2020)
+plt.figure()
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis("off")
+plt.show()
+'''
+
