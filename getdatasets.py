@@ -1,5 +1,6 @@
 from getdates import *
 from compiledata import *
+import nltk
 
 #call functions to get links, dates, and year-end dates
 links, dates = get_links_and_dates()
