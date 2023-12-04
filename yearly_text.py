@@ -1,5 +1,5 @@
-#do not have to run this file again
-#created the 'textbyyear.txt' file, with 17 strings of yearly text (1 per year)
+# Author: Ben Elenbaas
+# Description: Script to create the 'textbyyear.txt' file. Retrieves all the links of the meetings to be scraped, groups them by year, and then calls 'webscrpae_link()' for each link (already grouped), and write all text for a year to 'textbyyear.txt' file. This script is not meant to be run again, it was just used to create the dataset.
 
 import re
 import requests
@@ -32,7 +32,7 @@ for year in cleaned_grouped_links:
     year_text = ' '.join(webscrape_link(str(link)) for link in year)
     yearly_text.append(year_text)
 
-#write to a file
+#write to the file
 with open('textbyyear.txt', 'w') as file:
    for element in yearly_text:
         file.write(str(element) + '\n')
