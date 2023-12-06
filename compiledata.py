@@ -1,3 +1,6 @@
+# Authors: Ben Elenbaas, Jack Klingenberg
+# Description: Create a csv file for all the text from our meetings. Each element is the text from a particular meeting along with the date of the meeting.
+
 from bs4 import BeautifulSoup
 import glob
 import pandas as pd

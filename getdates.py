@@ -1,9 +1,10 @@
-#scrape the date off of each file
+# Author: Ben Elenbaas
+# Description: Contains functions which are called when generating our datasets.
 
 import re
 
+# retrieves all of the urls, returns the links and dates of each meeting (comes directly from the links) 
 def get_links_and_dates():
-    #retrieve all of the urls
     links_txt_path = 'data/links.txt'
     with open(links_txt_path, 'r') as links_txt:
         links = links_txt.readlines()
@@ -16,6 +17,7 @@ def get_links_and_dates():
     
     return links, dates
 
+# get only the year-end dates; we didn't end up 
 def get_year_end_dates(dates):
     year_end_dates = []
     for date in dates:
