@@ -7,6 +7,7 @@ import pandas as pd
 import re 
 import sys
 
+#webscrape a meeting, perform regex replacements, append to a list
 def text_webscrape(file):
     text_list = []
 

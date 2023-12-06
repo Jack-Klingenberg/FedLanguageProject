@@ -23,13 +23,6 @@ for text in text_list:
     tokenized_text = nltk.word_tokenize(text)
     tokenized_list.append(tokenized_text)
 
-#get types, tokens, type:token ratio
-token_count = 0
-type_count = 0
-for token_list in tokenized_list:
-    token_count += len(token_list)
-    type_count += len(set(token_list))
-
 #stop words
 stoplist = stopwords.words("english")
 stoplist.extend([".", ",", "?", "could", "would", "“", "”", "’", ";", "!", 's', 'meeting', 'markets', 'financial', 'participants', 'prices', 'economic', 'conditions', 'committee', 'core', 'outlook', 'housing', "'s", 'spending', 'committee', 'remained', 'rate', 'likely', 'also', 'expected', 'consumer', 'quarter', 'data', 'market', 'generally', 'higher', 'period', 'price', 'generally', 'committee', 'june', "''", 'continued', 'progress', 'economy', 'bank', 'reserve', 'june', 'committee\\', 'reserve', ')', 'board', 'division', 'federal', '``', '2', 'goals', 'monetary', 'supply', 'policy'])

@@ -1,3 +1,6 @@
+# Author: Ben Elenbaas
+# Decription: Read in dataset -> tokenize, create stop list, bigrams, collocations, word clouds
+
 import sys
 import csv
 import re
@@ -11,13 +14,6 @@ from nltk.stem import WordNetLemmatizer
 from nltk.collocations import *
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-
-'''
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_extraction.text import CountVectorizer
-from pathlib import Path
-import pandas as pd
-'''
 
 #text_list is a list of all the text, with one element per file
 def read_in_data():
@@ -75,14 +71,14 @@ for w in finder2020.nbest(bigram_measures.pmi, 10):
     print(" ".join(w))
 '''
 
-
+'''
 for year in tokenized_list:
     tokens = len(year)
     types = len(set(year))
     print(types/tokens)
 
 print(len(tokenized_list))
-
+'''
 
 '''
 file_path = 'textbyyear.txt'  # Replace 'your_file.txt' with the actual file path
