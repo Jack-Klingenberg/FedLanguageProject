@@ -65,7 +65,7 @@ for b in bigramfreq2022.most_common(1000):
         print(b)
 '''
 
-#collocations
+#collocations (update tokenized_list[x] for the respective year)
 #side note - have to remove names
 '''
 tokens_2020_nostops = [w for w in tokenized_list[13] if w.lower() not in stoplist]
@@ -99,10 +99,8 @@ with open(file_path, 'r') as file:
         print(f"Line {line_number}: {len(words)} words")
 '''
 
-
-#word clouds - chnage tokenized_list[x] for year (2020: x=13, 2022: x=15)
+#word clouds - change tokenized_list[x] for year (2020: x=13, 2022: x=15)
 '''
-
 #lemmztize
 lemmatizer = WordNetLemmatizer()
 
