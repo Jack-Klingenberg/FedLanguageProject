@@ -27,6 +27,7 @@ def get_year_end_dates(dates):
 
     return year_end_dates
 
+#function to group the given links by year
 def group_links_by_year(links):
     grouped_links = []
     current_year = None

@@ -47,12 +47,18 @@ print(fdist2022.most_common(20))
 
 #bigrams
 '''
+bigrams2020 = nltk.ngrams(tokenized_list[13], 2)
+bigramlist2020 = list(bigrams2020)
+bigramfreq2020 = nltk.FreqDist(bigramlist2020)
+#print(bigramfreq2020.most_common(10))
+
 print('\n')
 bigrams2022 = nltk.ngrams(tokenized_list[15], 2)
 bigramlist2022 = list(bigrams2022)
 bigramfreq2022 = nltk.FreqDist(bigramlist2022)
 #print(bigramfreq2022.most_common(10))
 
+#testing
 print('\n')
 for b in bigramfreq2022.most_common(1000):
     if b[0][0].lower() not in stoplist and b[0][1].lower() not in stoplist:
@@ -60,7 +66,7 @@ for b in bigramfreq2022.most_common(1000):
 '''
 
 #collocations
-#have to remove names
+#side note - have to remove names
 '''
 tokens_2020_nostops = [w for w in tokenized_list[13] if w.lower() not in stoplist]
 
@@ -71,6 +77,7 @@ for w in finder2020.nbest(bigram_measures.pmi, 10):
     print(" ".join(w))
 '''
 
+#types, tokens, type:token ratio
 '''
 for year in tokenized_list:
     tokens = len(year)
@@ -92,7 +99,11 @@ with open(file_path, 'r') as file:
         print(f"Line {line_number}: {len(words)} words")
 '''
 
+
+#word clouds - chnage tokenized_list[x] for year (2020: x=13, 2022: x=15)
 '''
+
+#lemmztize
 lemmatizer = WordNetLemmatizer()
 
 tokens_2020_nostops = [w for w in tokenized_list[15] if w.lower() not in stoplist]
@@ -108,4 +119,3 @@ plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
 plt.show()
 '''
-
