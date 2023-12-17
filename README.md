@@ -38,6 +38,6 @@ txtfilesbyyear (folder) - all FOMC minutes combined into documents by year
 - [x] Save links to html files
 - [x] Write web scraper code for each webpage (!)
 - [x] Compile all scraped text into dataset that can be loaded without repeating web scraping process
-- [ ] Analyze data
-- [ ] Create slides
-- [ ] Presentation
+- [x] Analyze data
+- [x] Create slides
+- [x] Presentation
