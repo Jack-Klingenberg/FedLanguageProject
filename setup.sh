@@ -1,3 +1,5 @@
+# Short script to set up virtual environment in python and download the requesite libraries 
+
 if [ -d "venv" ]; then
     echo "Virtual Environment ./venv already found. If there is an issue with dependencies, try deleting the venv and rerunning setup.sh"
 else

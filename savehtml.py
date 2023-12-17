@@ -7,6 +7,7 @@ import requests
 import os
 import re
 
+# Parse HTML link and save to a file
 def save_html_to_file(url, filepath):
     with open(url, "r") as file:
         for link in file:
@@ -23,6 +24,7 @@ def save_html_to_file(url, filepath):
             except requests.exceptions.RequestException as e:
                 print(f"Error: {e}")
 
+# Takes in command line arguments and passes them to the save_html_to_file function, and saves them to the location specified by the second argument
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: python script.py <URL> <output_filepath>")

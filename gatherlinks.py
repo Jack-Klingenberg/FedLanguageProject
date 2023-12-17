@@ -1,14 +1,15 @@
 # Author: Jack Klingenberg
-# Date: Nov 22, 2023
 # Description: Python script to gather all links to FOMC minute html files without direct web scraping. Uses Requests library to test if link is link is valid and if it is adds it to argv[3] file. Checks for minutes between Jan 1, argv[1] and Dec 31, year argv[2]
 
 import requests
 import sys 
 from tqdm import tqdm
 
+# Takes in date range
 START = int(sys.argv[1])
 END  = int(sys.argv[2])
 TARGET = sys.argv[3]
+# Function to check if the endpoint is valid
 def check_link_exists(url):
     try:
         response = requests.head(url)
@@ -23,10 +24,12 @@ for year in range(START,END+1):
     for month in range(1,13):
         for day in range(1,31):
             link = "https://www.federalreserve.gov/monetarypolicy/fomcminutes%i%02i%02i.htm" %(year,month,day)
+            # If the endpoint is valid, add the link to the list
             if check_link_exists(link):
                 links.append(link)
             progressbar.update(1)
             progressbar.set_postfix(Message=f"Checking date {month}/{day}/{year}")
 
+# Write the contents of the list to the file specified by command prompt
 with open(TARGET, "w") as file:
     [file.write(link+"\n") for link in links]

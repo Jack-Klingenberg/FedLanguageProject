@@ -31,7 +31,7 @@ def text_webscrape(file):
 
 def main():
     matrix = []
-
+    # Go through each downloaded html file
     for path in glob.glob("./data/html/*"):
         with open(path,"r") as file:
             date = path.split("/minutes")[-1].split(".")[0]
@@ -39,14 +39,16 @@ def main():
             month = date[4:6]
             day=date[6:8]
 
+            # Use bs4 to scrape file
             text = text_webscrape(file) 
 
             row = [year,month,day,text]
             matrix.append(row)
-    
+    # Create dataframe with resulting documents
     df = pd.DataFrame(matrix).sort_values(by=[0,1,2])
     df.columns = ["year", "month", "day", "text"]
 
+    # Attempt to save the csv
     try:
         df.to_csv(sys.argv[1], index=False)
     except:

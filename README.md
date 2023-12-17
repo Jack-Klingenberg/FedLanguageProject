@@ -22,12 +22,22 @@ requirements.txt - contains packages and versions needed for the project. If you
 
 gatherlinks.py - python script that gets all documents in a specified date range and pushes them to a text file. Usage: python3 gatherlinks.py [start] [end] [filepath]
 
+compiledata.py - deprecated python script that created a csv file indexed by the FOMC meeting (in time order) 
+
+gatherlinks.py - tests url endpoints to find all the required links to the meeting notes. The meeting notes are stored at identical URLs that only differ in the numbers at the end (which is just the date of the meeting), this script goes through and tests each endpoint in a given range storing all the "active" links in a text file. 
+
+tfidf.ipynb - python notebook where we created all of the graphs for the presentation
+
+data (folder) - stores all the HTML files, as well as the csv file outputted by compiledata.py and some misc text files
+
+txtfilesbyyear (folder) - all FOMC minutes combined into documents by year 
+
 ## To-Do
 
 - [x] Generate links
 - [x] Save links to html files
 - [x] Write web scraper code for each webpage (!)
 - [x] Compile all scraped text into dataset that can be loaded without repeating web scraping process
-- [ ] Analyze data
-- [ ] Create slides
-- [ ] Presentation
+- [x] Analyze data
+- [x] Create slides
+- [x] Presentation
